@@ -1,0 +1,37 @@
+{
+  "name": "static-analysis-code",
+  "version": "1.0.0",
+  "description": "code for static analysis lessons",
+  "main": "index.js",
+  "author": "Reuben Berghan <reuben.berghan@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-typescript": "^7.7.4",
+    "@typescript-eslint/eslint-plugin": "^2.11.0",
+    "@typescript-eslint/parser": "^2.11.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "husky": "^3.1.0",
+    "prettier": "1.19.1",
+    "typescript": "^3.7.3"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=12.4"
+  },
+  "scripts": {
+    "build": "babel src --extensions .js,.ts,.tsx --out-dir dist",
+    "check-format": "yarn prettier --list-different",
+    "check-types": "tsc",
+    "format": "yarn prettier --write",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "nodemod": "node --experimental-modules --require ./setup-globals.cjs",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,tsx}\"",
+    "validate": "yarn check-types && yarn check-format && yarn lint && yarn build"
+  }
+}
