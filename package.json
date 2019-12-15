@@ -18,6 +18,7 @@
     "eslint-config-prettier": "^6.7.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "1.19.1",
     "typescript": "^3.7.3"
   },
@@ -33,6 +34,6 @@
     "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
     "nodemod": "node --experimental-modules --require ./setup-globals.cjs",
     "prettier": "prettier --ignore-path .gitignore \"**/*.{js,json,ts,tsx}\"",
-    "validate": "yarn check-types && yarn check-format && yarn lint && yarn build"
+    "validate": "npm-run-all --parallel check-types check-format lint build"
   }
 }
