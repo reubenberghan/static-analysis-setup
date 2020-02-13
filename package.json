@@ -1,5 +1,5 @@
 {
-  "name": "static-analysis-code",
+  "name": "static-analysis-setup",
   "version": "1.0.0",
   "description": "code for static analysis lessons",
   "main": "index.js",
